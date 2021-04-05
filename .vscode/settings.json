@@ -1,0 +1,12 @@
+{
+    "editor.tabSize": 2,
+    "javascript.preferences.quoteStyle": "double",
+    "yaml.format.enable": false,
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true,
+    },
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+    ],
+}

@@ -7,7 +7,6 @@ module.exports = {
     es6: true,
     node: true,
     browser: true,
-    jest: true,
   },
   plugins: [
     "prettier",
@@ -30,7 +29,7 @@ module.exports = {
     "plugin:lodash/recommended",
   ],
 
-    parser: "babel-eslint",
+  parser: "babel-eslint",
   parserOptions: {
     ecmaVersion: 6,
     sourceType: "module",

@@ -1,7 +1,7 @@
 {
   "name": "directum",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -53,14 +53,16 @@
     "eslint-plugin-unicorn": "20.1.0",
     "husky": "^6.0.0",
     "lint-staged": "^10.5.4",
+    "pinst": "^2.1.6",
     "prettier": "^2.2.1"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS -c commitlint.config.js"
     }
-  },
+  }, 
   "lint-staged": {
-    
+    "*.{js,jsx}" : "eslint -c .eslintrc.js --fix src/**/*.jsx"
   }
 }

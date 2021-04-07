@@ -2,8 +2,9 @@ const path = require("path")
 const { alias } = require("react-app-rewire-alias")
 
 const aliasMap = {
-  "@ui": path.join(__dirname, "src", "ui"),
-  "@components": path.join(__dirname, "src", "components"),
+  "@components": "./src/сomponents",
+  "@pages": path.join("src", "pages"),
+  "@actions": path.join("src", "store", "actions"),
 }
 
 module.exports = alias(aliasMap)

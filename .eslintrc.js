@@ -90,6 +90,9 @@ module.exports = {
     "promise/prefer-await-to-then": "error",
     "promise/prefer-await-to-callbacks": "error",
 
+    //security
+    "security/detect-object-injection": "off",
+
     // no-secrets
     "no-secrets/no-secrets": "error",
 
@@ -171,6 +174,7 @@ module.exports = {
     "lodash/prefer-lodash-method": "off",
 
     // unicorn
+    "unicorn/consistent-function-scoping": "off",
     "unicorn/prevent-abbreviations": [
       "error",
       {

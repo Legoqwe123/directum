@@ -19,6 +19,7 @@ module.exports = {
     "optimize-regex",
     "react-hooks",
     "lodash",
+    "import",
   ],
   extends: [
     "plugin:react/recommended",
@@ -53,6 +54,7 @@ module.exports = {
     curly: "error",
     "no-unneeded-ternary": "error",
     "no-nested-ternary": "error",
+    "no-unused-vars": "error",
 
     // filenames
     "filenames/match-regex": ["error", "^[a-z0-9.-]+$", false],
@@ -61,6 +63,7 @@ module.exports = {
 
     // react
     "react/jsx-indent": "off",
+    "react/jsx-no-undef": "error",
     "react/jsx-indent-props": "off",
     "react/jsx-filename-extension": "off",
     "react/prop-types": "off",
@@ -188,11 +191,11 @@ module.exports = {
 
   settings: {
     react: {
-      version: "17.0.1",
+      version: "17.0.2",
     },
     "import/resolver": {
       node: {
-        paths: [path.resolve(__dirname, ".")],
+        paths: [path.resolve(__dirname, "src")],
       },
     },
   },

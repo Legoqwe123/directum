@@ -1,24 +1,26 @@
-import "./App.css"
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import { ThemeProvider } from "emotion-theming"
+import { Box } from "rebass"
 
-function App() {
+import { theme } from "./theme/theme"
+
+export const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Router>
+        <Switch>
+          <Route
+            path="*"
+            component={() => (
+              <Box
+                color={["blue", "lightgray", "red", "orange", "green", "black"]}
+              >
+                hello
+              </Box>
+            )}
+          />
+        </Switch>
+      </Router>
+    </ThemeProvider>
   )
 }
-
-export default App

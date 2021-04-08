@@ -8,7 +8,7 @@ export const PhotoListItem = ({ photo }) => {
   const history = useHistory()
 
   const handleClick = () =>
-    history.push(`${routes.author}?albumId=${photo.author}`)
+    history.push(`${routes.author}?albumId=${photo.albumId}`)
 
   return (
     <Card
@@ -56,7 +56,7 @@ export const PhotoListItem = ({ photo }) => {
             cursor: "pointer",
           }}
         >
-          Album
+          Author
         </Button>
       </Flex>
     </Card>

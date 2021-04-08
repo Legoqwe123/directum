@@ -1,6 +1,9 @@
-import { createStore, applyMiddleware } from "redux"
+import { createStore, applyMiddleware, combineReducers } from "redux"
 import thunkMiddleware from "redux-thunk"
 
-import { reducerPhoto } from "./reducers"
+import { reducerPhoto, reducerAuthor } from "./reducers"
 
-export const store = createStore(reducerPhoto, applyMiddleware(thunkMiddleware))
+export const store = createStore(
+  combineReducers({ photo: reducerPhoto, author: reducerAuthor }),
+  applyMiddleware(thunkMiddleware),
+)

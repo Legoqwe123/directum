@@ -6,6 +6,7 @@ import { PhotoPage } from "@pages/photo.page"
 
 import { theme } from "theme/theme"
 import { store } from "store/store"
+import { routes } from "core/routes"
 
 export const App = () => {
   return (
@@ -13,7 +14,7 @@ export const App = () => {
       <Provider store={store}>
         <Router>
           <Switch>
-            <Route path="*" component={PhotoPage} />
+            <Route path={routes.photo} component={PhotoPage} />
           </Switch>
         </Router>
       </Provider>

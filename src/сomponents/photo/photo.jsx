@@ -1,30 +1,36 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 
-import { loadPhoto } from "@actions"
+import { loadPhotos } from "@actions"
 
-import { WithLoading } from "ui/with.loading"
+import { usePagination } from "hooks/use.pagingation"
 
 import { PhotoView } from "./ui/photo.view"
 
+const PAGINATION_STEP = 20
+
 export const Photo = () => {
   const dispatch = useDispatch()
-  const { loading, photos } = useSelector((state) => state)
+  const { photos, loading } = useSelector((state) => state.photo)
+
+  const [start, end, handleNext, handlePrevious] = usePagination(
+    0,
+    PAGINATION_STEP,
+  )
 
   useEffect(() => {
-    dispatch(loadPhoto(0, 20))
+    dispatch(loadPhotos(start, end))
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [start])
 
   return (
-    <WithLoading
+    <PhotoView
+      photos={photos}
+      handleNext={handleNext}
+      handlePrevious={handlePrevious}
       loading={loading}
-      boxProps={{
-        alingItems: "center",
-        justifyContent: "center",
-        height: "90vh",
-      }}
-      component={() => <PhotoView photos={photos} />}
+      step={start}
     />
   )
 }

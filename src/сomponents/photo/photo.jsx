@@ -1,5 +1,5 @@
 import { useEffect } from "react"
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 
 import { loadPhotos } from "@actions"
 
@@ -11,11 +11,11 @@ const PAGINATION_STEP = 20
 
 export const Photo = () => {
   const dispatch = useDispatch()
-  const { photos, loading } = useSelector((state) => state.photo)
 
   const [start, end, handleNext, handlePrevious] = usePagination(
     0,
     PAGINATION_STEP,
+    5000,
   )
 
   useEffect(() => {
@@ -26,10 +26,8 @@ export const Photo = () => {
 
   return (
     <PhotoView
-      photos={photos}
       handleNext={handleNext}
       handlePrevious={handlePrevious}
-      loading={loading}
       step={start}
     />
   )

@@ -1,9 +1,16 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
-export const usePagination = (start, step) => {
+export const usePagination = (start, step, limit) => {
   const [counter, setCounter] = useState(start)
 
-  const nextStep = () => setCounter((previousState) => previousState + step)
+  useEffect(() => {
+    setCounter(start)
+  }, [start])
+
+  const nextStep = () =>
+    setCounter((previousState) =>
+      limit && previousState >= limit ? previousState : previousState + step,
+    )
 
   const previousStep = () =>
     setCounter((previousState) =>

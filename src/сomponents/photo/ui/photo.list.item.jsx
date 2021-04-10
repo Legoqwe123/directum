@@ -27,6 +27,8 @@ export const PhotoListItem = ({ photo }) => {
       <Image
         src={photo.url}
         maxWidth={[200, 200, "100%", "100%", "100%", "100%"]}
+        height="250px"
+        width="250px"
         maxHeight="250px"
       />
 
@@ -50,7 +52,7 @@ export const PhotoListItem = ({ photo }) => {
           fontSize={[1, 1, 2, 2, 2, 2]}
           mt={2}
           fontWeight="heading"
-          color="text"
+          color="white"
           onClick={handleClick}
           sx={{
             cursor: "pointer",

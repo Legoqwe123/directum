@@ -25,6 +25,7 @@ export const PhotoButtons = ({ step, handleNext, handlePrevious }) => {
         disabled={loading || step <= 0}
         backgroundColor="white"
         onClick={handlePrevious}
+        color="secondary"
         p={2}
         sx={{
           cursor: "pointer",

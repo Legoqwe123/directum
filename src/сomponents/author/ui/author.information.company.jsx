@@ -38,8 +38,8 @@ export const AuthorInformationCompany = ({ company }) => {
             "1 1 35%",
             "1 1 35%",
             "1 1 35%",
-            "1 1 40%",
-            "1 1 40%",
+            "1 1 28%",
+            "1 1 30%",
           ]}
         >
           <Heading color="grey" fontSize={2}>

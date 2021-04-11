@@ -9,17 +9,15 @@ import { theme } from "theme/theme"
 import { store } from "store/store"
 import { routes } from "core/routes"
 
-export const App = () => {
-  return (
-    <ThemeProvider theme={theme}>
-      <Provider store={store}>
-        <Router>
-          <Switch>
-            <Route exact path={routes.photo} component={PhotoPage} />
-            <Route exact path={routes.author} component={AuthorPage} />
-          </Switch>
-        </Router>
-      </Provider>
-    </ThemeProvider>
-  )
-}
+export const App = () => (
+  <ThemeProvider theme={theme}>
+    <Provider store={store}>
+      <Router>
+        <Switch>
+          <Route exact path={routes.photo} component={PhotoPage} />
+          <Route exact path={routes.author} component={AuthorPage} />
+        </Switch>
+      </Router>
+    </Provider>
+  </ThemeProvider>
+)

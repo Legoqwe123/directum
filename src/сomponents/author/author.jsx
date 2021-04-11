@@ -6,7 +6,7 @@ import { loadAuthor } from "@actions"
 import { useQuery } from "hooks/user.query"
 
 import { AuthorView } from "./ui/author.view"
-import { WithLoading } from "ui/with.loading"
+import { WithLoading } from "@components/ui/with.loading"
 
 export const Author = () => {
   const dispatch = useDispatch()

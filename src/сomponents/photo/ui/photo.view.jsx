@@ -4,7 +4,7 @@ import { useSelector } from "react-redux"
 import { PhotoList } from "./photo.list"
 import { PhotoButtons } from "./photo.buttons"
 
-import { WithLoading } from "ui/with.loading"
+import { WithLoading } from "@components/ui/with.loading"
 
 export const PhotoView = (props) => {
   const { photos, loading } = useSelector((state) => state.photo)

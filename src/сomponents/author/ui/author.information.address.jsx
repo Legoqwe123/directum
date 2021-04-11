@@ -44,7 +44,9 @@ export const AuthoInformationAddress = ({ address }) => (
         <Heading color="grey" fontSize={2}>
           Street
         </Heading>
-        <Text mt={1}>{address.street}</Text>
+        <Text mt={1} color="text">
+          {address.street}
+        </Text>
       </Box>
       <Box
         mt={3}
@@ -62,7 +64,9 @@ export const AuthoInformationAddress = ({ address }) => (
         <Heading color="grey" fontSize={2}>
           City
         </Heading>
-        <Text mt={1}>{address.city}</Text>
+        <Text mt={1} color="text">
+          {address.city}
+        </Text>
       </Box>
       <Box
         mt={4}
@@ -96,7 +100,9 @@ export const AuthoInformationAddress = ({ address }) => (
         <Heading color="grey" fontSize={2}>
           Code
         </Heading>
-        <Text mt={1}>{address.zipcode}</Text>
+        <Text mt={1} color="text">
+          {address.zipcode}
+        </Text>
       </Box>
     </Flex>
   </Box>

@@ -26,7 +26,7 @@ const fetchAuthorFailure = () => ({
   type: "FETCH_AUTHOR_FAILURE",
 })
 
-export const loadPhotos = (start, end) => async (dispatch) => {
+export const loadPhotosPagination = (start, end) => async (dispatch) => {
   try {
     dispatch(fetchPhotoRequested())
 
@@ -42,22 +42,35 @@ export const loadPhotos = (start, end) => async (dispatch) => {
   }
 }
 
+export const loadsPhotosByAlbumdId = (albumID) => async (dispatch) => {
+  try {
+    dispatch(fetchPhotoRequested())
+
+    const photosJSON = await fetch(
+      createUrlForFetch(`photos?albumId=${albumID}`),
+    )
+
+    const photos = await photosJSON.json()
+
+    dispatch(fetchPhotoSuccess(photos))
+  } catch (error) {
+    dispatch(fetchPhotoFailure(error))
+  }
+}
+
 export const loadAuthor = (albumID) => async (dispatch) => {
   try {
     dispatch(fetchAuthorRequested())
 
-    const urls = [
-      createUrlForFetch(`albums?id=${albumID}`),
-      createUrlForFetch(`photos?albumId=${albumID}`),
-    ]
+    const albumJSON = await fetch(createUrlForFetch(`albums?id=${albumID}`))
+    const [album] = await albumJSON.json()
 
-    const [album, albums] = await Promise.all(
-      urls.map(async (url) => await (await fetch(url)).json()),
-    )
-
-    const userId = album[0].userId
+    const userId = album.userId
     const userJSON = await fetch(createUrlForFetch(`users?id=${userId}`))
     const [user] = await userJSON.json()
+
+    const albumsJSON = await fetch(createUrlForFetch(`albums?userId=${userId}`))
+    const albums = await albumsJSON.json()
 
     dispatch(
       fetchAuthorSuccess({

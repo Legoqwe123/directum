@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { useDispatch } from "react-redux"
 
-import { loadPhotos } from "@actions"
+import { loadPhotosPagination } from "@actions"
 
 import { usePagination } from "hooks/use.pagingation"
 
@@ -19,7 +19,7 @@ export const Photo = () => {
   )
 
   useEffect(() => {
-    dispatch(loadPhotos(start, end))
+    dispatch(loadPhotosPagination(start, end))
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [start])

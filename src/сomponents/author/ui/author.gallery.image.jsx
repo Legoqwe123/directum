@@ -1,19 +1,50 @@
-import { Image } from "rebass"
+import { Flex, Image, Button, Text } from "rebass"
 
-export const AuthorGalleryImage = ({ src, ...props }) => (
-  <Image
-    src={src}
-    width={[150, 150, 165, 175, 150, 150, 150]}
-    height={[150, 150, 165, 175, 150, 150, 150]}
+import arrowLeft from "images/left-arrow.png"
+import arrowRight from "images/right-arrow.png"
+
+export const AuthorGalleryImage = ({
+  photo,
+  step,
+  limit,
+  decrement,
+  increment,
+}) => (
+  <Flex
+    display="flex"
+    flexDirection="column"
+    bg="white"
     sx={{
-      position: "relative",
-      cursor: "pointer",
-      transition: "transform ease .2s",
-      ":hover": {
-        transform: "scale(1.1)",
-        zIndex: "999",
-      },
+      borderRadius: "3px",
     }}
-    {...props}
-  />
+  >
+    <Image
+      src={photo.url}
+      height={[300, 300, 500, 600, 600, 600, 600, 600]}
+      width={[300, 300, 500, 600, 600, 600, 600, 600]}
+    />
+    <Flex justifyContent="space-between" alignItems="center">
+      <Button
+        bg="white"
+        sx={{
+          cursor: "pointer",
+          outline: "none",
+        }}
+        onClick={increment}
+      >
+        <Image src={arrowLeft} width={30} />
+      </Button>
+      <Text fontWeight="heading">{`${step + 1}/${limit}`}</Text>
+      <Button
+        bg="white"
+        sx={{
+          cursor: "pointer",
+          outline: "none",
+        }}
+        onClick={decrement}
+      >
+        <Image src={arrowRight} width={30} />
+      </Button>
+    </Flex>
+  </Flex>
 )

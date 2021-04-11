@@ -33,7 +33,9 @@ export const AuthorInformationContact = ({ info }) => (
         <Heading color="grey" fontSize={2}>
           Name
         </Heading>
-        <Text mt={1}>{info.name}</Text>
+        <Text mt={1} color="text">
+          {info.name}
+        </Text>
       </Box>
       <Box
         mt={3}
@@ -51,7 +53,9 @@ export const AuthorInformationContact = ({ info }) => (
         <Heading color="grey" fontSize={2}>
           Email
         </Heading>
-        <Text mt={1}>{info.email}</Text>
+        <Text mt={1} color="text">
+          {info.email}
+        </Text>
       </Box>
       <Box
         mt={4}
@@ -68,7 +72,9 @@ export const AuthorInformationContact = ({ info }) => (
         <Heading color="grey" fontSize={2}>
           Username
         </Heading>
-        <Text mt={1}>{info.username}</Text>
+        <Text mt={1} color="text">
+          {info.username}
+        </Text>
       </Box>
       <Box
         mt={4}
@@ -85,7 +91,9 @@ export const AuthorInformationContact = ({ info }) => (
         <Heading color="grey" fontSize={2}>
           Phone
         </Heading>
-        <Text mt={1}>{info.phone}</Text>
+        <Text mt={1} color="text">
+          {info.phone}
+        </Text>
       </Box>
       <Box
         mt={4}
@@ -102,7 +110,9 @@ export const AuthorInformationContact = ({ info }) => (
         <Heading color="grey" fontSize={2}>
           Website
         </Heading>
-        <Text mt={1}>{info.website}</Text>
+        <Text color="text" mt={1}>
+          {info.website}
+        </Text>
       </Box>
     </Flex>
   </Box>

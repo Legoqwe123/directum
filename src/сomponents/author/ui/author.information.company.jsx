@@ -44,7 +44,9 @@ export const AuthorInformationCompany = ({ company }) => (
         <Heading color="grey" fontSize={2}>
           Name
         </Heading>
-        <Text mt={1}>{company.name}</Text>
+        <Text mt={1} color="text">
+          {company.name}
+        </Text>
       </Box>
       <Box
         mt={3}
@@ -62,7 +64,9 @@ export const AuthorInformationCompany = ({ company }) => (
         <Heading color="grey" fontSize={2}>
           CatchPhrase
         </Heading>
-        <Text mt={1}>{company.catchPhrase}</Text>
+        <Text mt={1} color="text">
+          {company.catchPhrase}
+        </Text>
       </Box>
       <Box
         mt={4}
@@ -79,7 +83,9 @@ export const AuthorInformationCompany = ({ company }) => (
         <Heading color="grey" fontSize={2}>
           Bs
         </Heading>
-        <Text mt={1}>{company.bs}</Text>
+        <Text mt={1} color="text">
+          {company.bs}
+        </Text>
       </Box>
     </Flex>
   </Box>

@@ -1,13 +1,13 @@
 import { useDispatch } from "react-redux"
 import { Text, Button } from "rebass"
 
-import { loadsPhotosByAlbumdId } from "@actions"
+import { loadPhotosByAlbumdId } from "@actions"
 
 export const AuthorInformationAlbumsItem = ({ album, openModal }) => {
   const dispatch = useDispatch()
 
   const handleClick = () => {
-    dispatch(loadsPhotosByAlbumdId(album.id))
+    dispatch(loadPhotosByAlbumdId(album.id))
     openModal()
   }
 

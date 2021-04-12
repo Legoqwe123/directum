@@ -42,7 +42,7 @@ export const loadPhotosPagination = (start, end) => async (dispatch) => {
   }
 }
 
-export const loadsPhotosByAlbumdId = (albumID) => async (dispatch) => {
+export const loadPhotosByAlbumdId = (albumID) => async (dispatch) => {
   try {
     dispatch(fetchPhotoRequested())
 
